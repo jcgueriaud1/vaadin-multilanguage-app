@@ -1,0 +1,15 @@
+{
+  "header": {
+    "title": "Hello",
+    "subtitle": "World"
+  },
+  "cta": {
+    "awesome": "{{ things }} are awesome!",
+    "cats": "Cats"
+  },
+  "routes": {
+    "hello": "Hello World",
+    "person": "Person",
+    "about": "About"
+  }
+}

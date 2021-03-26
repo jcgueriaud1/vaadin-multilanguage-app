@@ -1,5 +1,6 @@
-package com.example.application;
+package org.vaadin.jchristophe.application;
 
+import com.vaadin.flow.component.dependency.NpmPackage;
 import com.vaadin.flow.component.page.AppShellConfigurator;
 import com.vaadin.flow.server.PWA;
 
@@ -15,6 +16,7 @@ import com.vaadin.flow.theme.Theme;
  * Use the * and some desktop browsers.
  *
  */
+@NpmPackage(value = "lit-translate", version = "1.2.1")
 @SpringBootApplication
 @Theme(value = "multi-langapp")
 @PWA(name = "Multi-lang App", shortName = "Multi-lang App", offlineResources = {"images/logo.png"})

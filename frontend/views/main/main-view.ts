@@ -10,6 +10,7 @@ import { views } from '../../routes';
 import { appStore } from '../../stores/app-store';
 import { Layout } from '../view';
 import styles from './main-view.css';
+import {registerTranslateConfig, use} from "lit-translate";
 
 interface RouteInfo {
   path: string;
@@ -54,7 +55,10 @@ export class MainView extends Layout {
 
   connectedCallback() {
     super.connectedCallback();
-
+    registerTranslateConfig({
+      loader: lang => fetch(`assets/i18n/${lang}.json`).then(res => res.json())
+    });
+    use("en_GB");
     this.reaction(
       () => appStore.location,
       () => {
@@ -76,7 +80,7 @@ export class MainView extends Layout {
       },
 
       {
-        path: 'hello-flow',
+        path: 'form-flow',
         title: 'Flow - Hello World',
       },
 

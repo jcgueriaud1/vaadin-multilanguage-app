@@ -50,7 +50,8 @@
     "@vaadin/vaadin-upload": "5.0.0",
     "lit-element": "2.3.1",
     "@adobe/lit-mobx": "^1.0.1",
-    "mobx": "^6.1.5"
+    "mobx": "^6.1.5",
+    "lit-translate": "1.2.1"
   },
   "devDependencies": {
     "@types/validator": "13.1.0",
@@ -127,7 +128,8 @@
       "@vaadin/vaadin-text-field": "3.0.2",
       "@vaadin/vaadin-time-picker": "3.0.0",
       "@vaadin/vaadin-upload": "5.0.0",
-      "lit-element": "2.3.1"
+      "lit-element": "2.3.1",
+      "lit-translate": "1.2.1"
     },
     "devDependencies": {
       "@types/validator": "13.1.0",
@@ -157,6 +159,6 @@
       "workbox-precaching": "5.1.4",
       "workbox-webpack-plugin": "5.1.4"
     },
-    "hash": "ee430491132b1a67ef15d737a0f05dd82b713e1c1f5487091c583d9bfb4fa0ff"
+    "hash": "8c9155cac89a8da819cdd344f49ee2a2056b3418642c4ed85781fbae04eba8ba"
   }
 }
