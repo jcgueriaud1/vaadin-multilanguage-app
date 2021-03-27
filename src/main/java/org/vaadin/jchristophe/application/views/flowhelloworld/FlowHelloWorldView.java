@@ -37,7 +37,7 @@ public class FlowHelloWorldView extends VerticalLayout implements HasDynamicTitl
 
     @Override
     public String getPageTitle() {
-        return getTranslation("form.title");
+        return getTranslation("flow.form.title");
     }
 
 }

@@ -10,7 +10,9 @@ import { views } from '../../routes';
 import { appStore } from '../../stores/app-store';
 import { Layout } from '../view';
 import styles from './main-view.css';
-import {registerTranslateConfig, use} from "lit-translate";
+import {registerTranslateConfig, use, translate, extract} from "lit-translate";
+import {getTranslations} from "Frontend/generated/TranslationEndpoint";
+import {ITranslateConfig, Values, ValuesCallback} from "lit-translate/model";
 
 interface RouteInfo {
   path: string;
@@ -37,12 +39,17 @@ export class MainView extends Layout {
             <img src="images/logo.png" alt="${appStore.applicationName} logo" />
             <span>${appStore.applicationName}</span>
           </div>
+
+          <div>
+            <vaadin-button @click="${this.switchToEnglish}">English</vaadin-button>
+            <vaadin-button @click="${this.switchToFrench}">Francais</vaadin-button>
+          </div>
           <hr />
           <vaadin-tabs orientation="vertical" theme="minimal" .selected=${this.getSelectedViewRoute()}>
             ${this.getMenuRoutes().map(
               (viewRoute) => html`
                 <vaadin-tab>
-                  <a href="${router.urlForPath(viewRoute.path)}" tabindex="-1">${viewRoute.title}</a>
+                  <a href="${router.urlForPath(viewRoute.path)}" tabindex="-1">${translate(viewRoute.title)}</a>
                 </vaadin-tab>
               `
             )}
@@ -56,7 +63,8 @@ export class MainView extends Layout {
   connectedCallback() {
     super.connectedCallback();
     registerTranslateConfig({
-      loader: lang => fetch(`assets/i18n/${lang}.json`).then(res => res.json())
+      loader: lang => getTranslations(lang).then(res => JSON.parse(res)),
+    interpolate: this.interpolate
     });
     use("en_GB");
     this.reaction(
@@ -67,26 +75,34 @@ export class MainView extends Layout {
     );
   }
 
+  /*
+    Use only 1 { instead of 2
+   */
+  private interpolate(text: string, values: Values | ValuesCallback | null, config: ITranslateConfig): string {
+    return Object.entries(extract(values || {}))
+        .reduce((text, [key, value]) => text.replace(new RegExp(`{[  ]*${key}[  ]*}`, `gm`), String(extract(value))), text);
+  }
+
   private getMenuRoutes(): RouteInfo[] {
     return [
       {
         path: 'hello',
-        title: 'Fusion - Hello World',
+        title: 'fusion.form.title',
       },
 
       {
         path: 'about',
-        title: 'About',
+        title: 'fusion.aboutview.title',
       },
 
       {
         path: 'form-flow',
-        title: 'Flow - Hello World',
+        title: 'flow.form.title',
       },
 
       {
         path: 'about-flow',
-        title: 'Flow - About',
+        title: 'flow.aboutview.title',
       },
     ];
 
@@ -95,5 +111,13 @@ export class MainView extends Layout {
 
   private getSelectedViewRoute(): number {
     return this.getMenuRoutes().findIndex((viewRoute) => viewRoute.path == appStore.location);
+  }
+
+  switchToFrench() {
+    use("fr_FR");
+  }
+
+  switchToEnglish() {
+    use("en_GB");
   }
 }

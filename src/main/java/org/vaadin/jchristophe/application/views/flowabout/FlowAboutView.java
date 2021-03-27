@@ -55,6 +55,6 @@ public class FlowAboutView extends VerticalLayout implements HasDynamicTitle {
      */
     @Override
     public String getPageTitle() {
-        return getTranslation("aboutview.title");
+        return getTranslation("flow.aboutview.title");
     }
 }
