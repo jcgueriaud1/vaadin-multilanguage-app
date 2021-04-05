@@ -1,5 +1,6 @@
 package org.vaadin.jchristophe.application.service;
 
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.server.connect.Endpoint;
 import com.vaadin.flow.server.connect.auth.AnonymousAllowed;
 import com.vaadin.flow.spring.annotation.SpringComponent;
@@ -28,14 +29,24 @@ public class PersonEndpoint {
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         validator = factory.getValidator();
     }
-
-    public void save(Person person) {
+    /**
+     * Loads a Person to edit into the view.
+     * @return default form data
+     */
+    public Person loadPerson() {
+        return new Person();
+    }
+    public void savePerson(Person person) {
 
         Set<ConstraintViolation<Person>> constraintViolations =
                 validator.validate( person );
         for (ConstraintViolation<Person> constraintViolation : constraintViolations) {
             System.out.println(constraintViolation.getMessage());
         }
-        System.out.println("Save the person");
+        if (constraintViolations.isEmpty()) {
+            System.out.println("save the person");
+        } else {
+            System.out.println("Error when save the person");
+        }
     }
 }
