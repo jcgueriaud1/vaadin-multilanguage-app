@@ -21,14 +21,6 @@ import java.util.Set;
 @Endpoint
 public class PersonEndpoint {
 
-
-    private static Validator validator;
-
-    @PostConstruct
-    private void init() {
-        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
-        validator = factory.getValidator();
-    }
     /**
      * Loads a Person to edit into the view.
      * @return default form data
@@ -36,17 +28,8 @@ public class PersonEndpoint {
     public Person loadPerson() {
         return new Person();
     }
-    public void savePerson(Person person) {
 
-        Set<ConstraintViolation<Person>> constraintViolations =
-                validator.validate( person );
-        for (ConstraintViolation<Person> constraintViolation : constraintViolations) {
-            System.out.println(constraintViolation.getMessage());
-        }
-        if (constraintViolations.isEmpty()) {
-            System.out.println("save the person");
-        } else {
-            System.out.println("Error when save the person");
-        }
+    public void savePerson(Person person) {
+        System.out.println("save the person");
     }
 }

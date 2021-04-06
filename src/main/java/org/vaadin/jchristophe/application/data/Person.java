@@ -1,5 +1,8 @@
 package org.vaadin.jchristophe.application.data;
 
+import org.vaadin.jchristophe.application.validation.CaseMode;
+import org.vaadin.jchristophe.application.validation.CheckCase;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
 
@@ -8,6 +11,7 @@ import javax.validation.constraints.Size;
  */
 public class Person {
 
+    @CheckCase(CaseMode.LOWER)
     @Size(min = 3, max = 250)
     private String firstName;
 
