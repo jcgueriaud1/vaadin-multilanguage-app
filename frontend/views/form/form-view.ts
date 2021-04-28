@@ -1,21 +1,24 @@
+
+import "../../components/my-cc-field";
 import '!style-loader!css-loader!./form-view.css';
 import { showNotification } from '@vaadin/flow-frontend/a-notification';
 import '@vaadin/vaadin-button';
 import '@vaadin/vaadin-text-field';
 import { customElement, html } from 'lit-element';
 import { View } from '../../views/view';
-import {Binder, field} from '@vaadin/form';
+import {field} from '@vaadin/form';
 import '@vaadin/vaadin-ordered-layout/vaadin-vertical-layout';
 
 import * as PersonEndpoint from 'Frontend/generated/PersonEndpoint';
 import PersonModel from 'Frontend/generated/org/vaadin/jchristophe/application/data/PersonModel';
 import {translate} from "lit-translate";
+import { MyBinder } from 'Frontend/utility/form/my-binder';
 
 @customElement('form-view')
 export class FormView extends View {
   name: string = '';
 
-  private binder = new Binder(this, PersonModel);
+  private binder = new MyBinder(this, PersonModel);
 
   render() {
     return html`
@@ -24,10 +27,10 @@ export class FormView extends View {
           label="${translate('form.person.firstName')}"
           ...="${field(this.binder.model.firstName)}"
       ></vaadin-text-field>
-      <vaadin-text-field
+      <my-cc-field
           label="${translate('form.person.lastName')}"
           ...="${field(this.binder.model.lastName)}"
-      ></vaadin-text-field>
+      ></my-cc-field>
       <vaadin-text-field
           label="${translate('form.person.email')}"
           ...="${field(this.binder.model.email)}"
