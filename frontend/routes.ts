@@ -1,6 +1,6 @@
 import { Flow } from '@vaadin/flow-frontend';
 import { Route } from '@vaadin/router';
-import './views/fusionhelloworld/fusion-hello-world-view';
+import './views/form/form-view';
 import './views/main/main-view';
 
 const { serverSideRoutes } = new Flow({
@@ -13,13 +13,13 @@ export const views: ViewRoute[] = [
   // for client-side, place routes below (more info https://vaadin.com/docs/v19/flow/typescript/creating-routes.html)
   {
     path: '',
-    component: 'fusion-hello-world-view',
-    title: '',
+    component: 'form-view',
+    title: 'Home',
   },
   {
     path: 'hello',
-    component: 'fusion-hello-world-view',
-    title: 'Fusion - Hello World',
+    component: 'form-view',
+    title: 'Fusion - Form',
   },
   {
     path: 'about',

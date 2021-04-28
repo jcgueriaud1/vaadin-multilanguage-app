@@ -1,4 +1,4 @@
-import '!style-loader!css-loader!./fusion-hello-world-view.css';
+import '!style-loader!css-loader!./form-view.css';
 import { showNotification } from '@vaadin/flow-frontend/a-notification';
 import '@vaadin/vaadin-button';
 import '@vaadin/vaadin-text-field';
@@ -11,8 +11,8 @@ import * as PersonEndpoint from 'Frontend/generated/PersonEndpoint';
 import PersonModel from 'Frontend/generated/org/vaadin/jchristophe/application/data/PersonModel';
 import {translate} from "lit-translate";
 
-@customElement('fusion-hello-world-view')
-export class FusionHelloWorldView extends View {
+@customElement('form-view')
+export class FormView extends View {
   name: string = '';
 
   private binder = new Binder(this, PersonModel);

@@ -1,4 +1,4 @@
-package org.vaadin.jchristophe.application.views.flowhelloworld;
+package org.vaadin.jchristophe.application.views.form;
 
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.notification.Notification;
@@ -11,7 +11,7 @@ import com.vaadin.flow.router.Route;
 import org.vaadin.jchristophe.application.data.Person;
 
 @Route(value = "form-flow")
-public class FlowHelloWorldView extends VerticalLayout implements HasDynamicTitle {
+public class FlowFormView extends VerticalLayout implements HasDynamicTitle {
 
     private Binder<Person> binder = new BeanValidationBinder<>(Person.class);
     private TextField firstName = new TextField(getTranslation("form.person.firstName"));
@@ -19,7 +19,7 @@ public class FlowHelloWorldView extends VerticalLayout implements HasDynamicTitl
     private TextField email = new TextField(getTranslation("form.person.email"));
     private Button validateButton = new Button(getTranslation("form.validate"));
 
-    public FlowHelloWorldView() {
+    public FlowFormView() {
         add(firstName, lastName, email);
         add(validateButton);
         binder.forField(firstName).bind("firstName");

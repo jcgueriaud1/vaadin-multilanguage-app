@@ -19,7 +19,7 @@
     "@vaadin/vaadin-confirm-dialog": "2.0.0",
     "@vaadin/vaadin-context-menu": "5.0.0",
     "@vaadin/vaadin-cookie-consent": "2.0.0",
-    "@vaadin/vaadin-core-shrinkwrap": "19.0.2",
+    "@vaadin/vaadin-core-shrinkwrap": "19.0.5",
     "@vaadin/vaadin-crud": "2.0.1",
     "@vaadin/vaadin-custom-field": "2.0.0",
     "@vaadin/vaadin-date-picker": "5.0.0",
@@ -42,7 +42,7 @@
     "@vaadin/vaadin-radio-button": "1.5.1",
     "@vaadin/vaadin-rich-text-editor": "2.0.0",
     "@vaadin/vaadin-select": "3.0.0",
-    "@vaadin/vaadin-shrinkwrap": "19.0.2",
+    "@vaadin/vaadin-shrinkwrap": "19.0.5",
     "@vaadin/vaadin-split-layout": "4.3.0",
     "@vaadin/vaadin-tabs": "4.0.0",
     "@vaadin/vaadin-text-field": "3.0.2",
@@ -50,7 +50,7 @@
     "@vaadin/vaadin-upload": "5.0.0",
     "lit-element": "2.3.1",
     "@adobe/lit-mobx": "^1.0.1",
-    "mobx": "^6.1.5",
+    "mobx": "^6.3.0",
     "lit-translate": "1.2.1"
   },
   "devDependencies": {
@@ -64,7 +64,6 @@
     "file-loader": "6.2.0",
     "glob": "7.1.6",
     "html-webpack-plugin": "4.5.1",
-    "idb": "5.0.6",
     "lit-css-loader": "0.0.4",
     "lit-element": "2.4.0",
     "lit-html": "1.3.0",
@@ -99,7 +98,7 @@
       "@vaadin/vaadin-confirm-dialog": "2.0.0",
       "@vaadin/vaadin-context-menu": "5.0.0",
       "@vaadin/vaadin-cookie-consent": "2.0.0",
-      "@vaadin/vaadin-core-shrinkwrap": "19.0.2",
+      "@vaadin/vaadin-core-shrinkwrap": "19.0.5",
       "@vaadin/vaadin-crud": "2.0.1",
       "@vaadin/vaadin-custom-field": "2.0.0",
       "@vaadin/vaadin-date-picker": "5.0.0",
@@ -122,14 +121,16 @@
       "@vaadin/vaadin-radio-button": "1.5.1",
       "@vaadin/vaadin-rich-text-editor": "2.0.0",
       "@vaadin/vaadin-select": "3.0.0",
-      "@vaadin/vaadin-shrinkwrap": "19.0.2",
+      "@vaadin/vaadin-shrinkwrap": "19.0.5",
       "@vaadin/vaadin-split-layout": "4.3.0",
       "@vaadin/vaadin-tabs": "4.0.0",
       "@vaadin/vaadin-text-field": "3.0.2",
       "@vaadin/vaadin-time-picker": "3.0.0",
       "@vaadin/vaadin-upload": "5.0.0",
       "lit-element": "2.3.1",
-      "lit-translate": "1.2.1"
+      "lit-translate": "^1.2.1",
+      "mobx": "^6.3.0",
+      "@adobe/lit-mobx": "^1.0.1"
     },
     "devDependencies": {
       "@types/validator": "13.1.0",
@@ -142,7 +143,6 @@
       "file-loader": "6.2.0",
       "glob": "7.1.6",
       "html-webpack-plugin": "4.5.1",
-      "idb": "5.0.6",
       "lit-css-loader": "0.0.4",
       "lit-element": "2.4.0",
       "lit-html": "1.3.0",
@@ -159,6 +159,6 @@
       "workbox-precaching": "5.1.4",
       "workbox-webpack-plugin": "5.1.4"
     },
-    "hash": "8c9155cac89a8da819cdd344f49ee2a2056b3418642c4ed85781fbae04eba8ba"
+    "hash": "c79b34ecec6a266924e188a4d39dd2d4c39dca9d15019fe4c0bfd6de945b0876"
   }
 }

@@ -16,7 +16,9 @@ import com.vaadin.flow.theme.Theme;
  * Use the * and some desktop browsers.
  *
  */
-@NpmPackage(value = "lit-translate", version = "1.2.1")
+@NpmPackage(value = "mobx", version = "^6.3.0")
+@NpmPackage(value = "@adobe/lit-mobx", version = "^1.0.1")
+@NpmPackage(value = "lit-translate", version = "^1.2.1")
 @SpringBootApplication
 @Theme(value = "multi-langapp")
 @PWA(name = "Multi-lang App", shortName = "Multi-lang App", offlineResources = {"images/logo.png"})
