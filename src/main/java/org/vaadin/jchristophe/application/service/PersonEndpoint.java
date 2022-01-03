@@ -1,7 +1,7 @@
 package org.vaadin.jchristophe.application.service;
 
-import com.vaadin.flow.server.connect.Endpoint;
-import com.vaadin.flow.server.connect.auth.AnonymousAllowed;
+import com.vaadin.flow.server.auth.AnonymousAllowed;
+import com.vaadin.fusion.Endpoint;
 import org.vaadin.jchristophe.application.data.Person;
 
 /**

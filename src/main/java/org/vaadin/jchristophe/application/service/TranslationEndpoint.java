@@ -3,8 +3,8 @@ package org.vaadin.jchristophe.application.service;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.javaprop.JavaPropsMapper;
-import com.vaadin.flow.server.connect.Endpoint;
-import com.vaadin.flow.server.connect.auth.AnonymousAllowed;
+import com.vaadin.flow.server.auth.AnonymousAllowed;
+import com.vaadin.fusion.Endpoint;
 
 import java.io.IOException;
 import java.util.*;
@@ -35,6 +35,7 @@ public class TranslationEndpoint {
         final ResourceBundle bundle = ResourceBundle.getBundle(BUNDLE_PREFIX, locale);
 
         Properties props = convertResourceBundleToProperties(bundle);
+
         return objectMapper.writeValueAsString(mapper.readPropertiesAs(props, JsonNode.class));
     }
 

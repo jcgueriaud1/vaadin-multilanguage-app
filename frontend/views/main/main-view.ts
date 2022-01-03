@@ -63,7 +63,7 @@ export class MainView extends Layout {
   connectedCallback() {
     super.connectedCallback();
     registerTranslateConfig({
-      loader: lang => getTranslations(lang).then(res => JSON.parse(res)),
+      loader: lang => getTranslations(lang).then(res => JSON.parse(res!)),
     interpolate: this.interpolate
     });
     use("en_GB");
