@@ -18,7 +18,7 @@ import com.vaadin.flow.theme.Theme;
  */
 @NpmPackage(value = "mobx", version = "^6.3.0")
 @NpmPackage(value = "@adobe/lit-mobx", version = "^2.0.0")
-@NpmPackage(value = "lit-translate", version = "2.0.0-rc.1")
+@NpmPackage(value = "lit-translate", version = "2.0.0")
 @SpringBootApplication
 @Theme(value = "multi-langapp")
 @PWA(name = "Multi-lang App", shortName = "Multi-lang App", offlineResources = {"images/logo.png"})

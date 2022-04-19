@@ -10,7 +10,8 @@
 
     <properties>
         <java.version>11</java.version>
-        <vaadin.version>23.0.0.alpha1</vaadin.version>
+        <vaadin.version>23.0.6</vaadin.version>
+        <hilla.version>1.0.6</hilla.version>
     </properties>
 
     <parent>
@@ -72,6 +73,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>dev.hilla</groupId>
+                <artifactId>hilla-bom</artifactId>
+                <version>${hilla.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -84,6 +92,10 @@
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>dev.hilla</groupId>
+            <artifactId>hilla</artifactId>
         </dependency>
         <dependency>
             <groupId>org.vaadin.artur</groupId>

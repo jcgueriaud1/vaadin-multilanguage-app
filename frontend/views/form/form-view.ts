@@ -2,9 +2,10 @@ import '!style-loader!css-loader!./form-view.css';
 import { showNotification } from '@vaadin/flow-frontend/a-notification';
 import '@vaadin/vaadin-button';
 import '@vaadin/vaadin-text-field';
-import { customElement, html } from 'lit-element';
+import { html } from 'lit';
+import {customElement} from 'lit/decorators.js';
 import { View } from '../../views/view';
-import {Binder, field} from '@vaadin/form';
+import {Binder, field} from '@hilla/form';
 import '@vaadin/vaadin-ordered-layout/vaadin-vertical-layout';
 
 import * as PersonEndpoint from 'Frontend/generated/PersonEndpoint';
